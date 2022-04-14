@@ -1,0 +1,28 @@
+server:
+  port: 8099
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hotel?useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  rabbitmq:
+    host: 192.168.225.128 # rabbitMQ的ip地址
+    port: 5672 # 端口
+    username: itcast
+    password: 123321
+    virtual-host: /
+  application:
+    name: adminservice
+  cloud:
+    nacos:
+      server-addr: 192.168.225.128:8848
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: cn.xmb.hotel.pojo
