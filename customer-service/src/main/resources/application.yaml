@@ -1,0 +1,23 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: customerservice
+  cloud:
+    nacos:
+      server-addr: 192.168.225.128:8848
+  rabbitmq:
+    host: 192.168.225.128
+    port: 5672
+    username: xmb
+    password: 123456
+    virtual-host: hotel
+  datasource:
+    url: jdbc:mysql://localhost:3306/hotel?useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: cn.xmb.customer.pojo

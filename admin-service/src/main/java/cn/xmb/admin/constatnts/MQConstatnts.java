@@ -1,6 +1,6 @@
-package cn.xmb.search.constants;
+package cn.xmb.admin.constatnts;
 
-public class MqConstatnts {
+public class MQConstatnts {
     /**
      * 交换机
      */

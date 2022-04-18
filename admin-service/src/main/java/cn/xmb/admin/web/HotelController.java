@@ -25,10 +25,11 @@ public class HotelController {
     @GetMapping("/list")
     public PageResult hotelList(
             @RequestParam(value = "page", defaultValue = "1") Integer page,
-            @RequestParam(value = "size", defaultValue = "1") Integer size
+            @RequestParam(value = "size", defaultValue = "10") Integer size
     ){
         Page<Hotel> result = hotelService.page(new Page<>(page, size));
         System.out.println("adminList");
+        System.out.println(result.getTotal());
         return new PageResult(result.getTotal(), result.getRecords());
     }
 

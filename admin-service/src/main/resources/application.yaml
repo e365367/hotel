@@ -9,9 +9,9 @@ spring:
   rabbitmq:
     host: 192.168.225.128 # rabbitMQ的ip地址
     port: 5672 # 端口
-    username: itcast
-    password: 123321
-    virtual-host: /
+    username: xmb
+    password: 123456
+    virtual-host: hotel
   application:
     name: adminservice
   cloud:

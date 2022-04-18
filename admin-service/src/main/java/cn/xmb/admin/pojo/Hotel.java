@@ -5,9 +5,12 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 @Data
 @TableName("tb_hotel")
-public class Hotel {
+public class Hotel implements Serializable {
     @TableId(type = IdType.AUTO)
     private Long id;
     private String name;
@@ -21,5 +24,5 @@ public class Hotel {
     private String longitude;
     private String latitude;
     private String pic;
-    private Long money;
+    private BigDecimal money;
 }

@@ -1,6 +1,6 @@
 package cn.xmb.admin.service.impl;
 
-import cn.xmb.admin.constatnts.MqConstatnts;
+import cn.xmb.admin.constatnts.MQConstatnts;
 import cn.xmb.admin.mapper.HotelMapper;
 import cn.xmb.admin.pojo.Hotel;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -15,11 +15,11 @@ public class HotelService extends ServiceImpl<HotelMapper, Hotel> implements cn.
 
     @Override
     public void sendToInsertAndUpdateQueue(Long id) {
-        rabbitTemplate.convertAndSend(MqConstatnts.HOTEL_EXCHANGE, MqConstatnts.HOTEL_INSERT_OR_UPDATE_KEY, id);
+        rabbitTemplate.convertAndSend(MQConstatnts.HOTEL_EXCHANGE, MQConstatnts.HOTEL_INSERT_OR_UPDATE_KEY, id);
     }
 
     @Override
     public void sendToDeleteQueue(Long id) {
-        rabbitTemplate.convertAndSend(MqConstatnts.HOTEL_EXCHANGE, MqConstatnts.HOTEL_DELETE_KEY, id);
+        rabbitTemplate.convertAndSend(MQConstatnts.HOTEL_EXCHANGE, MQConstatnts.HOTEL_DELETE_KEY, id);
     }
 }
